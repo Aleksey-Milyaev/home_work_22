@@ -1,0 +1,18 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "оргтехника",
+        "description": "периффрия для ПК"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Инструменты",
+        "description": "Садовый инвентарь"
+    }
+}
+]

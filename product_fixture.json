@@ -1,39 +1,39 @@
 [
 {
     "model": "catalog.product",
-    "pk": 2,
+    "pk": 12,
     "fields": {
-        "name": "ceosera",
-        "description": "Для ПК",
+        "name": "розетка",
+        "description": "220 вольт, 15 ампер",
         "image": "",
-        "category": "оргтехника",
-        "purchase_price": 15000.0,
+        "category": 7,
+        "purchase_price": 300.0,
         "created_at": null,
         "updated_at": null
     }
 },
 {
     "model": "catalog.product",
-    "pk": 3,
+    "pk": 13,
     "fields": {
-        "name": "mediana",
-        "description": "Для ПК",
+        "name": "лампочка",
+        "description": "патрон Е27",
         "image": "",
-        "category": "оргтехника",
-        "purchase_price": 5000.0,
+        "category": 7,
+        "purchase_price": 150.0,
         "created_at": null,
         "updated_at": null
     }
 },
 {
     "model": "catalog.product",
-    "pk": 5,
+    "pk": 14,
     "fields": {
-        "name": "hutter",
-        "description": "Для сада",
+        "name": "кабель",
+        "description": "10 метров 3х2.5",
         "image": "",
-        "category": "Инструменты",
-        "purchase_price": 50000.0,
+        "category": 7,
+        "purchase_price": 1500.0,
         "created_at": null,
         "updated_at": null
     }

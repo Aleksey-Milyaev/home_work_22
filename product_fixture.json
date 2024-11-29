@@ -1,0 +1,41 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+        "name": "розетка",
+        "description": "220 вольт, 15 ампер",
+        "image": "",
+        "category": 7,
+        "purchase_price": 300.0,
+        "created_at": null,
+        "updated_at": null
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+        "name": "лампочка",
+        "description": "патрон Е27",
+        "image": "",
+        "category": 7,
+        "purchase_price": 150.0,
+        "created_at": null,
+        "updated_at": null
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+        "name": "кабель",
+        "description": "10 метров 3х2.5",
+        "image": "",
+        "category": 7,
+        "purchase_price": 1500.0,
+        "created_at": null,
+        "updated_at": null
+    }
+}
+]

@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h2 class="card-title pricing-card-title">Описание</h2>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li class="text-center">{{ product.description}}</li>
+                        <li class="text-center">{{ product.description|truncatechars:100}}</li>
                     </ul>
                     <img src="{{product.image | media_filter }}" class="img-fluid" style="height: 180px;">
 

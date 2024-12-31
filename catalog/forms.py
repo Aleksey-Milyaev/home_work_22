@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm
+from django.forms import ModelForm, BooleanField
 
 from catalog.models import Product
 
@@ -10,6 +10,44 @@ class ProductForm(ModelForm):
     class Meta:
         model = Product
         fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        super(ProductForm, self).__init__(*args, **kwargs)
+
+        self.fields['name'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Введите название товара'
+        })
+
+        self.fields['description'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Введите описание товара'
+        })
+
+        self.fields['image'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Загрузите изображение'
+        })
+
+        self.fields['category'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Выберете категорию'
+        })
+
+        self.fields['purchase_price'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Укажите цену'
+        })
+
+        self.fields['created_at'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Дата создания'
+        })
+
+        self.fields['updated_at'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Дата последнего изменения'
+        })
 
     def clean_name(self):
         name = self.cleaned_data.get('name')

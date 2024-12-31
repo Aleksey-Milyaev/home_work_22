@@ -22,3 +22,9 @@ class ProductForm(ModelForm):
         if set(description.lower().split()).intersection(self.forbidden_words):
             raise ValidationError(f'Эти слова не должны присутствовать в описании: {', '.join(self.forbidden_words)}')
         return description
+
+    def clean_purchase_price(self):
+        purchase_price = self.cleaned_data.get('purchase_price')
+        if purchase_price < 0:
+            raise ValidationError('цена не может быть отрицательной')
+        return purchase_price

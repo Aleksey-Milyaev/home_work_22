@@ -22,8 +22,12 @@
 
                         <div class="btn-group">
                             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Перейти</a>
-                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
-                            <a class="btn btn-danger"  href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
+                            {% if product.owner == user %}
+                                <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
+                            {% endif %}
+                            {% if product.owner == user or 'catalog.delete_product' in perms %}
+                                <a class="btn btn-danger"  href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
+                            {% endif %}
                         </div>
                     </div>
             </div>

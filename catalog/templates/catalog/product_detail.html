@@ -20,6 +20,12 @@
                     <img src="{{product.image | media_filter }}" class="img-fluid" style="height: 180px;">
                     <div class="btn-group">
                         <a class="btn btn-primary" role="button">Купить</a>
+                        <div>
+                            <form method="post" action="{% url 'catalog:un_published_product_views' product.id %}">
+                                {% csrf_token %}
+                                <button class="btn btn-outline-secondary" type="submit">Отмена публикации</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

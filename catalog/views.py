@@ -5,9 +5,11 @@ from django.urls import reverse_lazy
 from django.views.generic import View
 
 from .forms import ProductForm
-from .models import Product
+from .models import Product, Category
 from django.views.generic import DetailView, ListView, TemplateView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
+from .services import get_products_by_category, get_products_from_cache
 
 
 class UnpublishedProductView(LoginRequiredMixin, View):
@@ -25,6 +27,17 @@ class UnpublishedProductView(LoginRequiredMixin, View):
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_products_from_cache()
+
+
+class ProductsByCategoryView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        category_id = self.kwargs.get('pk')
+        return get_products_by_category(category_id=category_id)
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
@@ -80,3 +93,7 @@ class ContactTemplateView(TemplateView):
             phone = self.request.POST.get('phone')
             return HttpResponse(f"Пользователь, {name} с номером {phone}! Ваше сообщение получено.")
         return render(request, 'contact.html')
+
+
+class CategoryListView(ListView):
+    model = Category

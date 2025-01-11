@@ -2,7 +2,8 @@
 {% load my_tags %}
 {% block content %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Категории</h1>
+    <a class="btn btn-primary" href="{% url 'catalog:category_list'  %}" role="button">Список товаров</a>
+    <h1 class="display-4">Все товары</h1>
 </div>
 
 <div class="container">
